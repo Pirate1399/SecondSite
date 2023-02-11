@@ -21,12 +21,10 @@ urlpatterns = [
     path('other/', include('apps.common.urls')),
     path('other/cart/', include('apps.cart.urls')),
     path('', include('apps.home.urls')),
-    path('about/', include('apps.home.urls')),
-    path('contact/', include('apps.home.urls')),
     path('cart_shop/', include('apps.cart_shop.urls')),
     path('shop/', include('apps.shop.urls')),
     path('single_products/', include('apps.shop.urls')),
-    path('wishlist/', include('apps.cart_shop.urls')),
     path('checkout/', include('apps.checkout.urls')),
     path('blog/', include('apps.blog.urls')),
+    path('login/', include('apps.auth_shop.urls')),
 ]
