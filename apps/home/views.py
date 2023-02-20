@@ -1,11 +1,13 @@
 from django.shortcuts import render
 from django.views import View
-from apps.cart_shop.models import Product
+from apps.cart_shop.models import Product, Wishlist
 
 class IndexShopView(View):
     def get(self, request):
         data = Product.objects.all()
-        context = {'data': data}
+        wish = Wishlist.objects.all()
+        wishname = [i.product.name for i in wish]
+        context = {'data': data, 'wishlist_items': wishname}
         return render(request, 'home/index.html', context)
 
 class AboutView(View):
